@@ -10,7 +10,11 @@ $aEmpleados[] = array("dni" => 40874456, "nombre" => "Ana Del Valle", "bruto" =>
 $aEmpleados[] = array("dni" => 67567565, "nombre" => "Andres Perez", "bruto" => 100000);
 $aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "bruto" => 70000);
 
+function calcularNeto($bruto){
+                    
+ return $bruto - ($bruto * 0.17);
 
+}
 
 ?>
 
@@ -42,10 +46,7 @@ $aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "bruto" => 
                         <th>Sueldo</th>
                     </thead>
                     <?php
-                    function calcularNeto($bruto)
-                    {
-                        return $bruto - ($bruto * 0.17);
-                    }
+                    
                     foreach ($aEmpleados as $empleado) {
 
 
@@ -56,9 +57,9 @@ $aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "bruto" => 
                                 <td><?php echo mb_strtoupper($empleado["nombre"]); ?></td>
 
 
-                                <td><?php $neto = calcularNeto($empleado["bruto"]);
+                                <td>$<?php echo number_format(calcularNeto($empleado["bruto"]), 2, ",", "."); ?></td>
 
-                                    echo number_format($neto, 2, ",", "."); ?></td>
+                                    <!-- $neto echo number_format($neto, 2, ",", "."); ?></td> otra forma de realizarlo, declarando variable-->
                             </tr>
                         </tbody>
                     <?php
