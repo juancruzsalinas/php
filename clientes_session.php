@@ -9,6 +9,7 @@ if (isset($_SESSION["listadoClientes"])) {
     //si existe la variable de session listadoClientes asigno su contenido a aClientes 
     $aClientes = $_SESSION["listadoClientes"];
 } else {
+    //Sino inicializa el array vacio.
     $aClientes = array();
 }
 
@@ -46,11 +47,11 @@ if ($_POST) {
 if (isset($_GET["pos"])) {
     //Recupero el dato que viene de query string via get:
     $pos = $_GET["pos"];
-
+    
     //Elimina la posicion del array indicada:
     unset($aClientes[$pos]);
 
-    //Actualizo l avariable de session con el array actualizado
+    //Actualizo la variable de session con el array actualizado
     $_SESSION["listadoClientes"] = $aClientes;
     header("Location: clientes_session.php");
 }
@@ -125,7 +126,7 @@ if (isset($_GET["pos"])) {
 
 
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endforeach;?>
                     </tbody>
 
                 </table>

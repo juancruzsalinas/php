@@ -16,6 +16,7 @@ $ivaCantidad= 0;
 
 
 if ($_POST) {
+    
     $iva = $_POST["lstIva"];
 
     $precioSinIva = ($_POST["txtPrecioSinIva"]) > 0 ? $_POST["txtPrecioSinIva"] : 0 ;

@@ -40,7 +40,7 @@ function promediar($aNumeros){
         <table class="table table-hover border mt-3">
             <thead>
                 <tr>
-                    
+                    <th>ID</th>
                     <th>Alumno</th>
                     <th>Nota1</th>
                     <th>Nota2</th>
@@ -48,9 +48,9 @@ function promediar($aNumeros){
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($aAlumnos as $alumno){ ?>
+                <?php foreach($aAlumnos as $pos => $alumno){ ?>
                 <tr>
-                    
+                    <td><?php echo $pos ?></td>
                     <td><?php echo $alumno["nombre"]; ?></td>
                     <td><?php echo $alumno["notas"][0]; ?></td>
                     <td><?php echo $alumno["notas"][1]; ?></td>
